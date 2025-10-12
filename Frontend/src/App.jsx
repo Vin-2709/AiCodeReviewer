@@ -7,6 +7,8 @@ import Markdown from 'react-markdown'
 import rehypeHighlight from 'rehype-highlight'
 import "highlight.js/styles/github-dark.css";
 import { Code2, Sparkles, CheckCircle, AlertCircle, Loader2, Github } from 'lucide-react';
+ 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function App() {
   const [code, setCode] = useState("");
@@ -28,7 +30,7 @@ function App() {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
+      const response = await axios.post(`${BACKEND_URL}/ai/get-review`, {
         code,
         language
       });
@@ -61,7 +63,7 @@ function App() {
 
     try {
       setLoading(true);
-      const response = await axios.post("http://localhost:3000/ai/get-review", {
+      const response = await axios.post(`${BACKEND_URL}/ai/get-review`, {
         githubUrl,
         language
       });
