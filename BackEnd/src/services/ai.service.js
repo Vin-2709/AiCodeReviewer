@@ -3,7 +3,7 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_GEMINI_KEY);
 const model = genAI.getGenerativeModel({
-    model: "gemini-2.0-flash",
+    model: "gemini-1.5-flash",
     systemInstruction: `You are an expert code reviewer. Your job is to review code with clarity, precision, and friendliness. Give helpful, constructive feedback — highlight strengths, point out issues, and suggest improvements. Use simple language and explain why something should be changed when necessary. Structure your response with clear sections like:
 
 ✅ What's Good
